@@ -12,3 +12,6 @@ Une machine qui jouera le rôle de superviseur, vous installerez le paquet debia
 
 Condition d'utilisations de l'application :
 
+Nom d'utilisateur doivent commencer par une lettre et contenir seulement des caractères alphanumériques.
+
+Les mdp doivent faire 8 caractères au minimum
