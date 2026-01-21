@@ -21,7 +21,10 @@ echo " Mise à jour de pip..."
 pip install --upgrade pip
 
 echo " Installation des dépendances Python..."
-pip install gunicorn flask flask-sqlalchemy SQLAlchemy flask-mysqldb bcrypt fabric mariadb
+pip install gunicorn flask flask-sqlalchemy SQLAlchemy flask-mysqldb bcrypt fabric mariadb PyYAML
 
 echo " Toutes les dépendances Python sont installées !"
+
+read -n 
+
 echo " Activez l'environnement virtuel avec : source venv/bin/activate"
