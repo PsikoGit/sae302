@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<nav>
+   <ul>
+      <li>Journaux</li>
+      <li>Machines</li>
+      <li>Utilisateurs</li>
+   </ul>
+</nav>
+
+    <div class="container"> 
+        <h2 class="word">Page de connexion</h2>
+
+        {% if msg %}
+			<p class="red">{{msg}}</p>
+		{% endif %}        
+        <form method="POST" action="/login">
+
+            <input class="textbox" type="text" name="username" placeholder="Entrer le nom d'utilisateur" required>
+            <input class="textbox" type="password" name="password" placeholder="Entrer le mot de passe" required>
+            <button class="btn" type="submit">Se connecter</button>
+        </form>
+    </div>

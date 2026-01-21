@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<nav>
+   <ul>
+   	  {% if user.get_privilege(session.id,1)%}
+      <li><a href="{{ url_for('user.journaux') }}">Journaux</a></li>
+      {%else%}
+      <li class="disabled">Journaux</li>
+      {%endif%}
+      
+   	  {% if user.get_privilege(session.id,2)%}
+      <li><a href="{{ url_for('user.machines') }}">Machines</a></li>
+      {%else%}
+      <li class="disabled">Machines</li>
+      {%endif%}
+
+   	  {% if user.get_privilege(session.id,4)%}
+      <li><a href="{{ url_for('user.utilisateurs') }}">Utilisateurs</a></li>
+      {%else%}
+      <li class="disabled">Utilisateurs</li>
+      {%endif%}
+
+      {%if session.id%}
+	  <li><a href="{{ url_for('user.logout') }}">Déconnexion</a></li>
+	  {%endif%}
+   </ul>
+</nav>
+
+  <main>
+  {% block content%}
+
+
+  {% endblock %}
+  </main>
+</body>
+</html>

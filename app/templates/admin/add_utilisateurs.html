@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<div class="container2">
+   <h1>Consultation et gestion des utilisateurs</h1>
+
+	{% if msg %}
+	<p class=red>{{msg}}</p>
+	{%endif%}
+   
+   <label>Cher administrateur, ajoutez l'utilisateur avec son nom, son mot de passe et son role_id</label> <br>
+   <label>Pour rappel les différents role_id sont :</label> <br>
+   <table>
+	   <tr>
+   		 	<td class="message">Role_id = 1</td>
+   		 	<td class="message">Lecture des journaux</td>
+   	   </tr>
+   	   <tr>
+   		 	<td class="message">Role_id = 2</td>
+   		 	<td class="message">Lecture des journaux + Gestion des machines</td>
+       </tr>
+   	   <tr>
+   	 	 	<td class="message">Role_id = 3</td>
+   	 	 	<td class="message">Lecture des journaux + Gestion des machines + Gestion des utilisateurs</td>
+       </tr>
+   </table>
+   <br>
+   <form method="POST" action='/utilisateurs'>
+   		Nom d'utilisateur : <input type="text" name="username" required maxlength="20"> <br>
+   		Mot de passe : <input type="text" name="password" required> <br>
+   		Vérifier le mot de passe : <input type="text" name="password2" required> <br>
+   		Role ID : <select name="role_id">
+   		<option>1</option>
+   		<option>2</option>
+   		<option>3</option>
+   		</select> <br>
+   		<input type="submit">
+   </form>
+</div>
+{% endblock %}

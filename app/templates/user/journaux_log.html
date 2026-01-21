@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+   <h1>Consultation des journaux</h1>
+
+	{% if msg %}
+	<p class="red">{{msg}}</p>
+	{%else%}
+
+	{% if liste_server|length > 1%}
+		<p>Consultation du journal des machines : {{liste_server | join(' et ')}}</p> <br>
+	{% elif liste_server|length == 1 %} 
+		<p>Consultation du journal de la machine : {{liste_server[0]}}</p> <br>
+	{%else%}
+		<p>Pas de machines sélectionnés</p> <br>
+	{%endif%}
+
+	{% if lines %}
+			{% for line in lines%}
+				<pre class="log-line">{{ line["date"] }} - {{ line["host"] }} {{ line["message"] }}</pre>
+			{%endfor%}
+	{% endif %}
+</div>
+    {%endif%}
+{% endblock %}

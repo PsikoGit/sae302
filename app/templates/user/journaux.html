@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<div class="container2">
+   <h1>Consultation des journaux</h1>
+
+		<form method="POST" action='/journaux_log'>
+	
+		<p>Sélectionnez les serveurs dont vous voulez consulter les journaux</p>
+
+		<ul>
+			{%for server in liste%}
+			<li>
+			   <label>
+				 <input type="checkbox" name="servers" value="{{server.ip}}">
+				 {{server.nom}} - {{server.ip}}
+			   </label>
+			</li>
+			{%endfor%}
+		</ul>
+
+		<button type="submit">Valider</button>
+		
+		</form>
+</div>
+{% endblock %}
