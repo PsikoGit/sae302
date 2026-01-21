@@ -30,7 +30,11 @@
    {%if elem.id == 1%}
    <input type="submit" value="Supprimer" disabled>
    {%else%}
-   <form method="GET" action="/delete_user/{{elem.id}}"><input type="submit" value="Supprimer"></form>
+   <form method="GET" action="/delete_user/{{elem.id}}">
+  	<button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer l\'utilisateur {{ elem.username }} ?')">
+  	Supprimer
+  	</button>
+   </form>
    {%endif%}
    </td>
    </tr>
