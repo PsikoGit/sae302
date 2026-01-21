@@ -19,28 +19,27 @@ Vérifier le mot de passe : <input type="text" name="password2" required> <br>
 <input type="submit">
 </form>
 {% else %}
-<label>Vous cherchez à modifier l'utilisateur dont l'id est : {{p.id}} <br></label>
 <label>Le nom actuel est : '{{p.username}}' et le role_id est : {{p.role_id}} <br></label>
 <label>Entrez le nouveau nom, mot de passe et le role_id de cet utilisateur <br> </label>
 <label>Pour rappel les différents role_id sont :</label> <br>
 <table>
 <tr>
-<td>Role_id = 1</td>
-<td>Lecture des journaux</td>
+<td class="message">Role_id = 1</td>
+<td class="message">Lecture des journaux</td>
 </tr>
 <tr>
-<td>Role_id = 2</td>
-<td>Lecture des journaux + Gestion des machines</td>
+<td class="message">Role_id = 2</td>
+<td class="message">Lecture des journaux + Gestion des machines</td>
 </tr>
 <tr>
-<td>Role_id = 3</td>
-<td>Lecture des journaux + Gestion des machines + Gestion des utilisateurs</td>
+<td class="message">Role_id = 3</td>
+<td class="message">Lecture des journaux + Gestion des machines + Gestion des utilisateurs</td>
 </tr>
 </table> <br>
 	<form method="POST" action="/modif_user/{{p.id}}">
 		Nom d'utilisateur : <input type="text" name="username" required> <br>
-		Mot de passe : <input type="text" name="password" required> <br>
-		Vérifier le mot de passe : <input type="text" name="password2" required> <br>
+		Mot de passe : <input type="password" name="password" required> <br>
+		Vérifier le mot de passe : <input type="password" name="password2" required> <br>
 		Role ID : <select name="role_id">
 		<option>1</option>
 		<option>2</option>

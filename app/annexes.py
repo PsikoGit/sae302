@@ -29,12 +29,12 @@ def verif_user(nom=None,mdp=None,role_id=None):
         import re
         pattern = r'^[a-zA-Z][a-zA-Z0-9_-]{2,19}$'
         if nom is not None:
-            if not re.match(pattern,nom):
-                raise InvalidUsernameError("Format du nom d'utilisateur invalide")
+            if not isinstance(nom,str) or not re.match(pattern,nom):
+                raise InvalidUsernameError("Format du nom d'utilisateur invalide : entre 3 et 20 caractères commençant par une lettre")
 
         if mdp is not None:
-            if not mdp.strip(): #Rajouter 8 caratere minimal
-                raise InvalidPasswordError("Format du mot de passe invalide")
+            if not isinstance(mdp, str) or len(mdp.strip()) < 8: #Rajouter 8 caratere minimal
+                raise InvalidPasswordError("Le mot de passe doit contenir au moins 8 caractères")
 
         if role_id is not None:
             role_existe = Role.query.get(role_id)

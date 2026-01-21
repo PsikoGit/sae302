@@ -6,7 +6,6 @@
 {% if msg %}
 <p>{{msg}}</p>
 {%else%} <br>
-<label>Vous cherchez à modifier la machine dont l'id est : {{p.id}}</label> <br>
 <label>Vous ne pouvez pas modifier le nom d'hôte de la machine, vous pouvez modifier seulement l'IP.</label> <br>
 <label>L'IP actuelle de la machine est : {{p.ip}}
 <form method="POST" action="/modif_machine/{{p.id}}"> <br>

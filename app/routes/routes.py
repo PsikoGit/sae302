@@ -50,7 +50,7 @@ def logout():
     return redirect('/login')
 
 #=======================================================
-#Tous les chemins liés à la consultation des journaux  ||
+# Tous les chemins liés à la consultation des journaux ||
 #=======================================================
 
 @user_bp.route('/journaux')
@@ -87,9 +87,9 @@ def journaux_log():
 
     return render_template('user/journaux_log.html',liste_server=server,user=user,lines=lines,msg=msg)
 
-#=================================================
-#Tous les chemins liés à la gestion des machines ||
-#=================================================
+#==================================================
+# Tous les chemins liés à la gestion des machines ||
+#==================================================
 
 @user_bp.route('/machines',methods=['GET','POST'])
 def machines():
@@ -173,7 +173,7 @@ def delete_machine(ref):
     return render_template('gestionnaire/machines.html',user=User.query.get(session['id']),liste=Serveur.query.all(),msg=msg)
 
 #=======================================================
-#Tous les chemins liés à la gestion des utilisateurs   ||
+# Tous les chemins liés à la gestion des utilisateurs  ||
 #=======================================================
 
 @user_bp.route('/utilisateurs',methods=['GET','POST'])
