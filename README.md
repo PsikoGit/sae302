@@ -29,7 +29,7 @@ Modifier le fichier `app/config.yaml`, renseignez l'utilisateur avec lequel vous
 
 ## Étape 2 – Configurer la base de données
 
-Sur le serveur MariaDB, ajouter un utilisateur qamu@localhost avec le mot de passe qamu (vous avez le choix de changer d'utilisateur et de mot de passe, il faudra changer la ligne du fichier `config.py` : `SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://qamu:qamu@localhost/sae302'`
+Sur le serveur MariaDB, ajouter un utilisateur qamu@localhost avec le mot de passe qamu et lui donner tous les droits sur la base de données sae302 (vous avez le choix de changer d'utilisateur et de mot de passe, il faudra changer la ligne du fichier `config.py` : `SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://qamu:qamu@localhost/sae302'`
 
 Créer la base de données sae302 sur votre serveur MariaDB et faites un dump du fichier `app_bdd.sql` avec la commande : `sudo mysql -u votre_utilisateur -p sae302 < app_bdd.sql`
 
