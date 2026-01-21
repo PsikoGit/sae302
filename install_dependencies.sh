@@ -6,7 +6,7 @@ sudo apt update
 
 echo "Installation des paquets Debian nécessaires..."
 sudo apt install -y mariadb-server python3 python3-pip python3.11-venv \
-    libmysqlclient-dev build-essential wget
+    libmariadb-dev build-essential wget
 
 echo "Dépendances système installées"
 
