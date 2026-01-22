@@ -8,37 +8,38 @@
    <div class=red>{{msg}}</div> <br>
 
    <form method="GET" action="/add_utilisateurs">
-	  <input type="submit" value="Ajouter un utilisateur dans la base de données">
+	   <input type="submit" value="Ajouter un utilisateur dans la base de données">
    </form>
+	
    <table>
-   <tr>
-   <th>ID</th>
-   <th>Nom d'utilisateur</th>
-   <th>Role_id</th>
-   <th>Modifier</th>
-   <th>Supprimer</th>
-   </tr>
-   <tr>
-   {% for elem in liste%}
-   <td>{{elem.id}}</td>
-   <td>{{elem.username}}</td>
-   <td>{{elem.role_id}}</td>
-   <td>
-   <form method="GET" action="/modif_user/{{elem.id}}"><input type="submit" value="Modifier"></form>
-   </td>
-   <td>
-   {%if elem.id == 1%}
-   <input type="submit" value="Supprimer" disabled>
-   {%else%}
-   <form method="POST" action="/delete_user/{{elem.id}}" onsubmit="return confirm('Supprimer cet utilisateur ?')"">
-  	<button type="submit">
-  	Supprimer
-  	</button>
-   </form>
-   {%endif%}
-   </td>
-   </tr>
-   {%endfor%}
+	   <tr>
+		   <th>ID</th>
+		   <th>Nom d'utilisateur</th>
+		   <th>Role_id</th>
+		   <th>Modifier</th>
+		   <th>Supprimer</th>
+	   </tr>
+	   <tr>
+		   {% for elem in liste%}
+			   <td>{{elem.id}}</td>
+			   <td>{{elem.username}}</td>
+			   <td>{{elem.role_id}}</td>
+			   <td>
+			  	    <form method="GET" action="/modif_user/{{elem.id}}"><input type="submit" value="Modifier"></form>
+			   </td>
+			   <td>
+			   		{%if elem.id == 1%}
+			   <input type="submit" value="Supprimer" disabled>
+			  		{%else%}
+			  		<form method="POST" action="/delete_user/{{elem.id}}" onsubmit="return confirm('Supprimer cet utilisateur ?')"">
+				  	<button type="submit">
+				  	Supprimer
+				  	</button>
+			   </form>
+			   {%endif%}
+			   </td>
+	   </tr>
+	   {%endfor%}
    </table>	
 </div>
 {% endblock %}
