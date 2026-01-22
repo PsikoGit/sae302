@@ -49,15 +49,18 @@ def get_log(servers):
                              connect_timeout=7,
                              connect_kwargs={"key_filename":f"/home/{os.environ.get('USER')}/.ssh/{ssh_file}"})
             lines = cnx.run("sudo tac /var/log/syslog",hide=True)
+            
+            lines = lines.stdout.strip().splitlines()
+            for line in lines:
+                line = line.split(None,4)
+                date = get_date(line[:3])
+                dico = {"date":date,"host":line[3],"message":line[4]}
+                logs.append(dico)
+
         except (TimeoutError, NoValidConnectionsError, SSHException, UnexpectedExit) as e:
             raise ServerConnectionError(ip, e)
-            
-        lines = lines.stdout.strip().splitlines()
-        for line in lines:
-            line = line.split(None,4)
-            date = get_date(line[:3])
-            dico = {"date":date,"host":line[3],"message":line[4]}
-            logs.append(dico)
+        except ValueError:
+            raise
 
     #Si y'a un seul serveur c'est déjà trié dans l'ordre décroissant grâce à la commande tac
     if len(servers) > 1:
