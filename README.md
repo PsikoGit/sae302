@@ -29,9 +29,9 @@ Modifier le fichier `app/config.yaml`, renseignez l'utilisateur avec lequel vous
 
 ## Étape 2 – Configurer la base de données
 
-Sur le serveur MariaDB, ajouter un utilisateur qamu@localhost avec le mot de passe qamu et lui donner tous les droits sur la base de données sae302 (vous avez le choix de changer d'utilisateur et de mot de passe, il faudra changer la ligne du fichier `config.py` : `SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://qamu:qamu@localhost/sae302'`
+Pour la configuration de la base de données, ça se fera automatiquement quand vous lancerez le script `install_dependencies.sh`. Par défaut, l'utilisateur qamu@localhost avec le mot de passe qamu est utilisé pour se connecter à la BDD pour l'application. 
 
-Créer la base de données sae302 sur votre serveur MariaDB et faites un dump du fichier `app_bdd.sql` avec la commande : `sudo mysql -u votre_utilisateur -p sae302 < app_bdd.sql`
+Si vous désirez changer d'utilisateur pour la connexion à la BDD, il faudra lui donner tous les droits sur la BDD sae302 et changer la ligne `SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://qamu:qamu@localhost/sae302'`, remplacer `qamu:qamu` par `user:password` 
 
 ---
 
@@ -44,5 +44,7 @@ Ajoutez l’utilisateur SSH à ce groupe : `sudo usermod -aG superviseur mon_uti
 Donnez à cet utilisateur des droits sudo sans mot de passe, mais seulement pour la commande spécifique utilisée par l’application `/usr/bin/tac /var/log/syslog` en modifiant `/etc/sudoers` : `sudo visudo`
 
 Ajoutez la ligne suivante (en adaptant le nom de l’utilisateur) : `mon_utilisateur ALL=(ALL) NOPASSWD: /usr/bin/tac /var/log/syslog`
+
+Sur les clients, il faudra sécurisé dans le fichier `~/.ssh/authorized_keys` et ajouter l'instruction `command="sudo tac /var/log/syslog",no-port-forwarding,no-X11-forwarding,no-agent-forwarding` devant la clé publique du serveur de supervision
 
 Assurez-vous que la machine distante est accessible depuis la machine centrale via SSH sur la couche 3 (ping et SSH fonctionnels).
