@@ -3,16 +3,22 @@
 {% block content %}
 
 <div class="container2">
-{% if msg %}
-<p>{{msg}}</p>
-{%else%} <br>
-<label>Vous ne pouvez pas modifier le nom d'hôte de la machine, vous pouvez modifier seulement l'IP.</label> <br>
-<label>L'IP actuelle de la machine est : {{p.ip}}
-<form method="POST" action="/modif_machine/{{p.id}}"> <br>
-Nom d'hôte : <input type="text" placeholder="{{p.nom}}" disabled> <br>
-Adresse IP : <input type="text" name="ip"> <br>
-<input type="submit">
-</form>
-{%endif%}
+  
+    {% if msg %}
+        <p>{{msg}}</p>
+    {%else%} <br>
+  
+        <label>Vous ne pouvez pas modifier le nom d'hôte de la machine, vous pouvez modifier seulement l'IP.</label> <br>
+        <label>L'IP actuelle de la machine est : {{p.ip}}
+          
+    <form method="POST" action="/modif_machine/{{p.id}}"> <br>
+        Nom d'hôte : <input type="text" placeholder="{{p.nom}}" disabled> <br>
+        Adresse IP : <input type="text" name="ip"> <br>
+        <input type="submit">
+    </form>
+          
+    {%endif%}
+          
 </div>
+
 {%endblock%}
