@@ -37,13 +37,9 @@ Si vous désirez changer d'utilisateur pour la connexion à la BDD, il faudra lu
 
 ## Étape 3 – Configurer les machines à superviser
 
-Créez un groupe dédié, par exemple superviseur : `sudo groupadd superviseur`
+Pour configurer les machines à superviser, il faudra importer les scripts `script_serv_utilisateur/config_sudoers.sh`et `script_serv_utilisateur/ssh-limiter.sh` sur les machines.
 
-Ajoutez l’utilisateur SSH à ce groupe : `sudo usermod -aG superviseur mon_utilisateur`
-
-Donnez à cet utilisateur des droits sudo sans mot de passe, mais seulement pour la commande spécifique utilisée par l’application `/usr/bin/tac /var/log/syslog` en modifiant `/etc/sudoers`
-
-Ajoutez la ligne suivante (en adaptant le nom de l’utilisateur) : `mon_utilisateur ALL=(ALL) NOPASSWD: /usr/bin/tac /var/log/syslog`
+Puis lancer le script `config_sudoers.sh`, ce script créera le groupe `superviseur` avec les droits sudo sans **mot de passe** et ajoutera votre utilisateur dans ce groupe pour le bon fonctionnement de l'application
 
 Sur les clients, il faudra sécurisé dans le fichier `~/.ssh/authorized_keys` et ajouter l'instruction `command="chemin_vers_le_fichier/ssh-limiter.sh",no-port-forwarding,no-X11-forwarding,no-agent-forwarding` devant la clé publique du serveur de supervision
 
