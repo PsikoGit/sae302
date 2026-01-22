@@ -45,4 +45,10 @@ Sur les clients, il faudra sécurisé dans le fichier `~/.ssh/authorized_keys` e
 
 Assurez-vous que la machine distante est accessible depuis la machine centrale via SSH sur la couche 3 (ping et SSH fonctionnels).
 
+## Étape 4 – L'application web
+
 Vous pourrez désormais lancer l'appli en exécutant le script `run.py` et aller sur le lien `localhost:5000`
+
+Il faudra se connecter avec le compte administrateur par défaut qui est *admin* avec le mot de passe *test*, il faudra bien évidemment changer le mot de passe de ce compte administrateur pour des raisons de sécurité.
+
+Vous pouvez désormais consulter la page `UTILISATION.md` pour savoir comment utiliser l'application web 
