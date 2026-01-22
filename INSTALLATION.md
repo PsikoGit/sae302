@@ -31,7 +31,7 @@ Modifier le fichier `app/config.yaml`, renseignez l'utilisateur avec lequel vous
 
 Pour la configuration de la base de données, ça se fera automatiquement quand vous lancerez le script `install_dependencies.sh`. Par défaut, l'utilisateur qamu@localhost avec le mot de passe qamu est utilisé pour se connecter à la BDD pour l'application. 
 
-Si vous désirez changer d'utilisateur pour la connexion à la BDD, il faudra lui donner tous les droits sur la BDD sae302 et changer la ligne `SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://qamu:qamu@localhost/sae302'`, remplacer `qamu:qamu` par `user:password` 
+Si vous désirez changer d'utilisateur pour la connexion à la BDD, il faudra lui donner tous les droits sur la BDD sae302 et changer la ligne `SQLALCHEMY_DATABASE_URI = 'mariadb+mariadbconnector://qamu:qamu@localhost/sae302'` dans le fichier `sae302/config.py|, remplacer `qamu:qamu` par `user:password` 
 
 ---
 
