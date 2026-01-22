@@ -47,7 +47,7 @@ def get_log(servers):
             ssh_file = config["ssh_file"]
             cnx = Connection(host=ip, user=user,
                              connect_timeout=7,
-                             connect_kwargs={"key_filename":f"/home/{os.environ.get("USER")}/.ssh/{ssh_file}"})
+                             connect_kwargs={"key_filename":f"/home/{os.environ.get('USER')}/.ssh/{ssh_file}"})
             lines = cnx.run("sudo tac /var/log/syslog",hide=True)
         except (TimeoutError, NoValidConnectionsError, SSHException, UnexpectedExit) as e:
             raise ServerConnectionError(ip, e)
