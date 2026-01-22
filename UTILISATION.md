@@ -132,8 +132,8 @@ Réservé exclusivement aux utilisateurs ayant le rôle **administrateur**.
 
 Chaque utilisateur est défini par :
 - un identifiant unique
-- un nom, ce nom est de 3 à 20 caractères maximum et doit :
-commencer par une lettre, contenir que des lettres minuscules et majuscules, peut contenir des chiffres, des tirets (`-`) et underscore (`_`) 
+- un nom d'utilisateur de 3 à 20 caractères qui commence par une lettre et peut :
+peut contenir des lettres minuscules et majuscules, contenir des chiffres, des tirets (`-`) et underscore (`_`) 
 - un mot de passe qui fera au moins 8 caractères
 - un rôle
 
