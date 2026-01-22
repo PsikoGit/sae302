@@ -10,7 +10,7 @@ Les journaux sont récupérés via une connexion SSH sécurisée et affichés da
 
 ## Lancer l'application
 
-Pour lancer l'application il faudra exécuter le fichier `run.py` qui se trouve dans le répertoire parent, aller sur un navigateur sur le lien `localhost:5000
+Pour lancer l'application il faudra exécuter le fichier `run.py` qui se trouve dans le répertoire parent, aller sur un navigateur sur le lien `localhost:5000` 
 
 ## Principe de fonctionnement
 
