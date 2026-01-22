@@ -4,6 +4,10 @@
 sudo apt install -y rsyslog
 sudo systemctl enable --now rsyslog
 
+if [ ! -s /etc/rsyslog.d/00-bsd-format.conf ] ; then
+	echo '$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat' | sudo tee -a /etc/rsyslog.d/00-bsd-format.conf
+fi 
+
 echo "Création du groupe 'superviseur'"
 
 sudo groupadd superviseur 
