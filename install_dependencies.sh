@@ -25,6 +25,19 @@ pip install gunicorn flask flask-sqlalchemy SQLAlchemy flask-mysqldb bcrypt fabr
 
 echo " Toutes les dépendances Python sont installées !"
 
-read -n 
+read -p "Entrez le nom de l'utilisateur MySQL/MariaDB avec droits de création de BDD : " SQL_USER
+echo
+
+echo "Création de la BDD et des tables..." 
+echo
+
+sudo mysql -u "$SQL_USER" -p <<MYSQL_SCRIPT
+CREATE DATABASE IF NOT EXISTS sae302;
+CREATE USER IF NOT EXISTS 'qamu'@'localhost' IDENTIFIED BY 'qamu';
+GRANT ALL PRIVILEGES ON sae302.* TO 'qamu'@'localhost' IDENTIFIED BY 'qamu';
+FLUSH PRIVILEGES;
+MYSQL_SCRIPT
+
+echo "✅ Base de données et utilisateur créés avec succès !"
 
 echo " Activez l'environnement virtuel avec : source venv/bin/activate"
