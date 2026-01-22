@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Met le format des journaux syslog dans le bon format pour l'application
+sudo apt install -y rsyslog
+sudo systemctl enable --now rsyslog
+
 echo "Création du groupe 'superviseur'"
 
 sudo groupadd superviseur 
@@ -20,10 +24,13 @@ else
 	exit 1
 fi
 
+if [ -s /etc/sudoers.d/command_tac ] ; then
+	echo "Le fichier /etc/sudoers.d/command_tac existe déjà"
+	exit
+fi
+
 sudo touch /etc/sudoers.d/command_tac
 
-echo "On ajoute la ligne suivante dans /etc/sudoers"
-echo
 echo "%superviseur ALL=(root) NOPASSWD: /usr/bin/tac /var/log/syslog" | sudo tee -a /etc/sudoers.d/command_tac
 
 sudo chown root:root /etc/sudoers.d/command_tac
