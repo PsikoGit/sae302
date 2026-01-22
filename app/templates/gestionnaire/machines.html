@@ -5,35 +5,38 @@
 <div class="container2">
    <h1>Consultation et gestion des machines</h1>
    <p class="red">{{msg}}</p>
+	
    <table>
-   <tr>
-   <th>Nom - IP</th>
-   <th>Modifier</th>
-   <th>Supprimer</th>
-   </tr>
-   {%for elem in liste%}
-   <tr>
-   <td class="message">{{elem.nom}} - {{elem.ip}}</td>
-   <td>
-   <form method="GET" action="/modif_machine/{{elem.id}}"><input type="submit" value="Modifier"></form>
-   </td>
-   <td>
-   <form method="POST" action="/delete_machine/{{elem.id}}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer le serveur {{elem.nom}} - {{elem.ip}}')"">
-	<button type="submit">Supprimer</button>
-   </form>
-   </td>
-   </tr>
-   {%endfor%}
+	   <tr>
+		   <th>Nom - IP</th>
+		   <th>Modifier</th>
+		   <th>Supprimer</th>
+	   </tr>
+	   {%for elem in liste%}
+		   <tr>
+			   <td class="message">{{elem.nom}} - {{elem.ip}}</td>
+			   <td>
+			   <form method="GET" action="/modif_machine/{{elem.id}}"><input type="submit" value="Modifier"></form>
+		       </td>
+			   <td>
+			   <form method="POST" action="/delete_machine/{{elem.id}}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer le serveur {{elem.nom}} - {{elem.ip}}')"">
+			   <button type="submit">Supprimer</button>
+			   </form>
+			   </td>
+		   </tr>
+	   {%endfor%}
    </table>
 	<br>
 
 	<h2>Ajouter une machine dans la base de données</h2>
+	
    <p>machine (hôte - IP)</p>
-   <form method="POST" action="/machines">
-   <input type="text" name="nom" placeholder="Nom d'hôte" required>
-   <input type="text" name="ip" placeholder="Adresse IPv4" required>
-   <button class="btn "type="submit">Ajouter</button> 
-   </form>
+	
+	   <form method="POST" action="/machines">
+		   <input type="text" name="nom" placeholder="Nom d'hôte" required>
+		   <input type="text" name="ip" placeholder="Adresse IPv4" required>
+		   <button class="btn "type="submit">Ajouter</button> 
+	   </form>
 </div>
 
 {% endblock %}
