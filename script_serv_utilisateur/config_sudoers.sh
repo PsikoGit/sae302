@@ -22,6 +22,8 @@ fi
 
 sudo touch /etc/sudoers.d/command_tac
 
+echo "On ajoute la ligne suivante dans /etc/sudoers"
+echo
 echo "%superviseur ALL=(root) NOPASSWD: /usr/bin/tac /var/log/syslog" | sudo tee -a /etc/sudoers.d/command_tac
 
 sudo chown root:root /etc/sudoers.d/command_tac
