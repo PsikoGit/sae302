@@ -22,7 +22,7 @@ fi
 
 sudo touch /etc/sudoers.d/command_tac
 
-echo "%superviseur ALL=(root) NOPASSWD: /usr/bin/tac /var/log/syslog" > /dev/null | sudo tee -a /etc/sudoers.d/command_tac
+echo "%superviseur ALL=(root) NOPASSWD: /usr/bin/tac /var/log/syslog" | sudo tee -a /etc/sudoers.d/command_tac
 
 sudo chown root:root /etc/sudoers.d/command_tac
 sudo chmod 440 /etc/sudoers.d/command_tac
