@@ -13,21 +13,21 @@ echo "Dépendances système installées"
 # Créer l'environnement virtuel Python
 
 
-echo " Création de l'environnement virtuel Python..."
+echo "Création de l'environnement virtuel Python..."
 python3 -m venv venv
 source venv/bin/activate
 
-echo " Mise à jour de pip..."
+echo "Mise à jour de pip..."
 pip install --upgrade pip
 
-echo " Installation des dépendances Python..."
+echo "Installation des dépendances Python..."
 pip install gunicorn flask flask-sqlalchemy SQLAlchemy flask-mysqldb bcrypt fabric mariadb PyYAML
 
-echo " Toutes les dépendances Python sont installées !"
+echo "Toutes les dépendances Python sont installées !"
 
 echo
 
-echo "Entrez le nom de l'utilisateur MySQL/MariaDB avec droits de création de BDD " SQL_USER
+echo "Entrez le nom de l'utilisateur MySQL/MariaDB avec droits de création de BDD "
 read -p "Si MariaDB vient d'être installé, le user est root et faites juste entrer pour le mot de passe : "
 
 echo
