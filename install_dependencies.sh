@@ -48,4 +48,4 @@ echo "✅ Base de données et utilisateur créés avec succès !"
 echo
 echo "L'utilisateur qamu avec le mdp qamu est utilisé par défaut pour se connecter à la BDD sae302"
 echo "Vous pouvez modifier cet utilisateur si vous le souhaiter, il faudra lire la doc"
-echo " Activez l'environnement virtuel avec : source venv/bin/activate"
+echo "Activez l'environnement virtuel avec : source venv/bin/activate"
