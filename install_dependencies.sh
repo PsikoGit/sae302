@@ -25,7 +25,11 @@ pip install gunicorn flask flask-sqlalchemy SQLAlchemy flask-mysqldb bcrypt fabr
 
 echo " Toutes les dépendances Python sont installées !"
 
-read -p "Entrez le nom de l'utilisateur MySQL/MariaDB avec droits de création de BDD : " SQL_USER
+echo
+
+echo "Entrez le nom de l'utilisateur MySQL/MariaDB avec droits de création de BDD " SQL_USER
+read -p "Si MariaDB vient d'être installé, le user est root et faites juste entrer pour le mot de passe : "
+
 echo
 
 echo "Création de la BDD et des tables..." 
