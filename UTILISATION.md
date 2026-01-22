@@ -2,7 +2,7 @@
 
 ## Présentation générale
 
-Cette application permet de superviser et consulter les journaux système (`/var/log/syslog`) d’un parc de serveurs GNU/Linux à distance.
+  Cette application permet de superviser et consulter les journaux système (`/var/log/syslog`) d’un parc de serveurs Debian à distance.
 
 Les journaux sont récupérés via une connexion SSH sécurisée et affichés dans une interface web développée avec Flask.
 
