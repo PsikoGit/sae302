@@ -155,7 +155,7 @@ def modif_machine(ref):
         msg = 'Vous essayez de modifier un serveur inexistant'
     return render_template('gestionnaire/modif_machines.html',user=user,p=p,msg=msg)
     
-@user_bp.route('/delete_machine/<int:ref>',methods=['GET'])
+@user_bp.route('/delete_machine/<int:ref>',methods=['POST'])
 def delete_machine(ref):
     result = verif_session_et_privilege(2)
     if result:
@@ -280,7 +280,7 @@ def modif_user(ref):
     return render_template('admin/modif_utilisateurs.html',user=user,p=p,msg='',inexist=inexist)
 
 
-@user_bp.route('/delete_user/<int:ref>',methods=['GET'])
+@user_bp.route('/delete_user/<int:ref>',methods=['POST'])
 def delete_user(ref):
     result = verif_session_et_privilege(4)
     if result:

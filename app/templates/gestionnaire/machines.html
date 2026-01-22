@@ -4,7 +4,7 @@
 
 <div class="container2">
    <h1>Consultation et gestion des machines</h1>
-   <p>{{msg}}</p>
+   <p class="red">{{msg}}</p>
    <table>
    <tr>
    <th>Nom - IP</th>
@@ -18,8 +18,8 @@
    <form method="GET" action="/modif_machine/{{elem.id}}"><input type="submit" value="Modifier"></form>
    </td>
    <td>
-   <form method="GET" action="/delete_machine/{{elem.id}}">
-	<button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le serveur {{elem.nom}} - {{elem.ip}}')">Supprimer</button>
+   <form method="POST" action="/delete_machine/{{elem.id}}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer le serveur {{elem.nom}} - {{elem.ip}}')"">
+	<button type="submit">Supprimer</button>
    </form>
    </td>
    </tr>
