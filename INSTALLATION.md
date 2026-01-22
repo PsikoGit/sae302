@@ -1,4 +1,4 @@
-# README – Installation de l’application de supervision Flask
+# Installation de l’application de supervision Flask
 
 ## Prérequis
 
