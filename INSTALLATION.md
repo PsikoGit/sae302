@@ -41,7 +41,7 @@ Créez un groupe dédié, par exemple superviseur : `sudo groupadd superviseur`
 
 Ajoutez l’utilisateur SSH à ce groupe : `sudo usermod -aG superviseur mon_utilisateur`
 
-Donnez à cet utilisateur des droits sudo sans mot de passe, mais seulement pour la commande spécifique utilisée par l’application `/usr/bin/tac /var/log/syslog` en modifiant `/etc/sudoers` : `sudo visudo`
+Donnez à cet utilisateur des droits sudo sans mot de passe, mais seulement pour la commande spécifique utilisée par l’application `/usr/bin/tac /var/log/syslog` en modifiant `/etc/sudoers`
 
 Ajoutez la ligne suivante (en adaptant le nom de l’utilisateur) : `mon_utilisateur ALL=(ALL) NOPASSWD: /usr/bin/tac /var/log/syslog`
 
