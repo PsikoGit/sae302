@@ -38,6 +38,8 @@ GRANT ALL PRIVILEGES ON sae302.* TO 'qamu'@'localhost' IDENTIFIED BY 'qamu';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
+sudo mysql -u qamu -pqamu sae302 < app_bdd.sql
+
 echo "✅ Base de données et utilisateur créés avec succès !"
 
 echo " Activez l'environnement virtuel avec : source venv/bin/activate"
