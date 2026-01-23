@@ -42,7 +42,7 @@ Si vous désirez changer d'utilisateur pour la connexion à la BDD, il faudra lu
 
 Pour configurer les machines à superviser, il faudra importer les scripts `script_serv_utilisateur/config_client.sh`et `script_serv_utilisateur/ssh-limiter.sh` sur les machines.
 
-Puis lancer le script `config_client.sh`, ce script créera le groupe `superviseur` et lui octroiera les droits sudo sans **mot de passe** sur la commande *tac* et ajoutera votre utilisateur dans ce groupe pour le bon fonctionnement de l'application
+Puis lancer le script `config_client.sh`, ce script créera le groupe `superviseur` et lui octroiera les droits sudo sans **mot de passe** sur la commande *tac /var/log/syslog* et ajoutera votre utilisateur dans ce groupe pour le bon fonctionnement de l'application
 
 Sur les clients, il faudra sécurisé dans le fichier `~/.ssh/authorized_keys` et ajouter l'instruction `command="chemin_vers_le_fichier/ssh-limiter.sh",no-port-forwarding,no-X11-forwarding,no-agent-forwarding` devant la clé publique du serveur de supervision
 
