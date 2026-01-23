@@ -85,7 +85,7 @@ def journaux_log():
             except ServerConnectionError as e:
                 msg = e
             except ValueError:
-                msg = "problème de valeur sur les logs des serveurs distants (sûrement dû à la formatation des dates)"
+                msg = "Problème de valeur sur les logs des serveurs distants (sûrement dû au formatage des dates modernes, lisez la doc pour régler ce problème)"
 
     return render_template('user/journaux_log.html',liste_server=server,user=user,lines=lines,msg=msg)
 

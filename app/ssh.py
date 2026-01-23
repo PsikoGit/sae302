@@ -52,9 +52,9 @@ def get_log(servers):
             
             lines = lines.stdout.strip().splitlines()
             for line in lines:
-                line = line.split(None,4)
+                line = line.split(None,3)
                 date = get_date(line[:3])
-                dico = {"date":date,"host":line[3],"message":line[4]}
+                dico = {"date":date,"message":line[3]}
                 logs.append(dico)
 
         except (TimeoutError, NoValidConnectionsError, SSHException, UnexpectedExit) as e:

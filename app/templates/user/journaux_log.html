@@ -18,7 +18,7 @@
 
 	{% if lines %}
 			{% for line in lines%}
-				<pre class="log-line">{{ line["date"] }} - {{ line["host"] }} {{ line["message"] }}</pre>
+				<pre class="log-line">{{line.date}} - {{line.message}}</pre>
 			{%endfor%}
 	{% endif %}
 </div>
