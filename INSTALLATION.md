@@ -8,6 +8,9 @@ Avant de commencer, assurez-vous d’avoir :
 - Accès SSH aux machines distantes que vous souhaitez superviser, avec authentification par clé asymétrique sans passphrase.
 - Un utilisateur disposant des droits sudo sur les machines distantes pour configurer le groupe et les permissions.
 - `mariadb-server` installé sur la machine centrale pour la base de données.
+- Sur les serveurs supervisés, le journal syslog doit être dans le format classique (BSD / RFC3164), exemple :
+`Jan 07 14:23:45 serveur sshd[1234]: Failed password for user`
+Si ce n'est pas le cas, le script d'installation du client rend les prochains journaux dans ce format là, les anciens logs devront d'être archivés dans un autre fichier. Les logs dans le format moderne ne seront pas visibles sur l'application Flask.
 
 ---
 
