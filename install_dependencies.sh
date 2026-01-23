@@ -1,8 +1,14 @@
 #!/bin/bash
 set -e
 
-sudo apt update
+user_actuel=$(whoami)
 
+if [ $user_actuel == 'root' ] ; then
+        echo "N'exécutez pas le script en tant que root"
+        exit 1
+fi
+
+sudo apt update
 
 echo "Installation des paquets Debian nécessaires..."
 sudo apt install -y mariadb-server python3 python3-pip python3.11-venv \
