@@ -1,5 +1,12 @@
 #!/bin/bash
 
+user_actuel=$(whoami)
+
+if [ $user_actuel == 'root' ] ; then
+        echo "N'exécutez pas le script en tant que root"
+        exit 1
+fi
+
 #Met le format des journaux syslog dans le bon format pour l'application
 sudo apt install -y rsyslog
 sudo systemctl enable --now rsyslog
